@@ -17,15 +17,7 @@ if os.path.exists('.env'):
 
 from app import create_app, db
 
-
-
-
-
-from app.models import User, Follow, Role, Permission, Post, Comment
-
-
-
-
+from app.models import User, Inspection, Organization
 
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
@@ -39,16 +31,7 @@ if os.environ.get('APP_SETTINGS') == 'config.HerokuConfig':
 
 
 def make_shell_context():
-
-
-
-
-    return dict(app=app, db=db, User=User, Follow=Follow, Role=Role,
-                Permission=Permission, Post=Post, Comment=Comment)
-
-
-
-
+    return dict(app=app, db=db, User=User, Organiation=Organization, Inspection=Inspection)
 
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
