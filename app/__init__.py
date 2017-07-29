@@ -1,7 +1,7 @@
 from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 
-from flask.ext.permissions.core import Permissions
+# from flask_permissions import Permissions
 
 
 from sqlalchemy import event
@@ -28,7 +28,7 @@ def create_app(config_name):
 		db.init_app(app)
 
 		# I have no idea what this does right now...
-		perms = Permissions(app, db, current_user)
+		# perms = Permissions(app, db, current_user)
 
 		from .main import main as main_blueprint
 		app.register_blueprint(main_blueprint)

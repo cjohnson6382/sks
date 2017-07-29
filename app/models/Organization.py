@@ -6,14 +6,16 @@ import json
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import relationship, backref
 
-from flask.ext.permissions.models import UserMixin
+# from flask_permissions.models import
 
-class User(UserMixin):
+class Organization():
 	__tablename__ = "organizations"
 
 	id = db.Column(db.String(64), ForeignKey('roleholders.id'), primary_key=True)
 	name = db.Column(db.String(128))
 	item = db.Column(JSONB)
+
+	users = relationship("User", cascade="all, delete-orphan")
 
 	def __init__(self, initial_data):
 		self.id = uuid.uuid1().hex
