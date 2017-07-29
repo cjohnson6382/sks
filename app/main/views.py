@@ -15,3 +15,12 @@ from .. import db
 @user_is("admin")
 def get_dashboard():
 	return "returns the dashboard"
+
+@main.route("/inspection-json"), methods=["GET"]
+def get_inspection():
+	return jsonify(
+		[
+			{ "name": "derpy", "type": "picker", "options": ["derp", "wow", "fancy"], "default": "derp" }, 
+			{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }
+		]
+	)
