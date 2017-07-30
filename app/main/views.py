@@ -18,7 +18,7 @@ def get_dashboard():
 def get_inspection():
 	return jsonify(
 		[
-			{ "name": "derpy", "type": "picker", "options": ["derp", "wow", "fancy"], "default": "derp" }, 
+			{ "name": "pickerly", "type": "picker", "options": ["derp", "wow", "fancy"], "default": "derp" }, 
 			{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }
 		]
 	)
