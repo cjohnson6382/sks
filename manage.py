@@ -5,7 +5,7 @@ import os
 from flask_script import Manager, Shell, Server
 from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
-from project import create_app, db
+from app import create_app, db
 
 
 
