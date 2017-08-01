@@ -22,3 +22,17 @@ def get_inspection():
 			{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }
 		]
 	)
+
+@main.route("/form", methods=["POST"])
+def new_form():
+	form_init = request.get_json()
+	try: 
+		return jsonify({"status": form_init, "message": "echoing user submission"})
+		"""
+		form = Form(form_init)
+		db.session.add(form)
+		db.session.commit()
+		return jsonify({ "status": "successfully created form" })
+		"""
+	except Exception as e: 
+		return jsonify({ "status": "failed to create form %s" % e })

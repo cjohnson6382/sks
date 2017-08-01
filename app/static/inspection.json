@@ -1,0 +1,132 @@
+inspectionForm = {
+	"generalInformation": [
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "HOMEOWNER NAME",
+			"placeholder": "HOMEOWNER NAME"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "HOMEOWNER EMAIL",
+			"placeholder": "HOMEOWNER EMAIL"			
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "ADDRESS",
+			"placeholder": "ADDRESS"			
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "CITY",
+			"placeholder": "CITY"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "STATE",
+			"placeholder": "STATE"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "ZIP",
+			"placeholder": "ZIP"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "CUSTOMER NAME",
+			"placeholder": "CUSTOMER NAME"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "CUSTOMER CASENUMBER",
+			"placeholder": "CUSTOMER CASENUMBER"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "INSTALLER NAME",
+			"placeholder": "INSTALLER CASE NUMBER"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "IBTS INSPECTOR",
+			"placeholder": "IBTS INSPECTOR"
+		}
+	],
+	"homeownerQuestionnaire": [
+		{
+			"type": "slider",
+			"name": "",
+			"description": "How likely is it that you would recommend the Solar PV leasing company to a friend or colleague?",
+			"range": 10,
+			"comments": ""
+		},
+		{
+			"type": "slider",
+			"name": "",
+			"description": "How likely is it that you would recommend the Solar PV contractor to a friend or colleague?",
+			"range": 10,
+			"comments": ""
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "How long did construction take?",
+			"value": 0,
+			"keyboardType": "numeric"
+		},
+		{
+			"type": "switch",
+			"name": "",
+			"description": "Have you been given a tutorial on your system?",
+			"labels": ["yes", "no"]
+		}
+	],
+	"saftey": [
+		{
+			"type": "picker",
+			"name": "",
+			"description": "Do you have all PPE Safety Equipment to perform the full inspection?",
+			"options": ["Yes", "No", "N/A"],
+			"default": "Yes"
+		},
+		{
+			"type": "picker",
+			"name": "",
+			"description": "Is the system powered on?",
+			"options": ["Yes", "No", "N/A"],
+			"default": "Yes"
+		},
+		{
+			"type": "picker",
+			"name": "",
+			"description": "Is the inverter indicating any ground faults or other error messages?",
+			"options": ["Yes", "No", "N/A"],
+			"default": "Yes"
+		},
+		{
+			"type": "textInput",
+			"name": "",
+			"description": "COMMENTS",
+			"placeholder": "COMMENTS"
+		}
+	],
+	"inspectionInformation": {},
+	"buildingInformation": {},
+	"array": {},
+	"structuralAndRoof": {},
+	"inverter": {},
+	"mainElectricalDistributionPanel": {},
+	"wiring": {},
+	"markingSignsAndWarningLabels": {},
+	"structural": {},
+	"electrical": {}
+}
