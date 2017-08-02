@@ -17,9 +17,9 @@ def get_dashboard():
 @main.route("/inspection-json", methods=["GET"])
 def get_inspection():
 	return jsonify(
-		[
-			{ "name": "pickerly", "type": "picker", "options": ["derp", "wow", "fancy"], "default": "derp" }, 
-			{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }
+		[	
+			{ "name": "general", "values": [{ "name": "pickerly", "type": "picker", "options": ["derp", "wow", "fancy"], "selected": "derp" }] },
+			{ "name": "inverter", "values": [{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }] }			
 		]
 	)
 
