@@ -8,20 +8,27 @@ import json
 from . import main
 from .. import db
 
+inspections = {
+	"base": [	
+		{ "name": "general", "values": [{ "name": "pickerly", "type": "picker", "options": ["solar stuff", "some other stuff", "very official inspection"], "selected": "derp" }] },
+		{ "name": "inverter", "values": [{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }] }			
+	]
+
+	
+}
 
 @main.route('/dashboard', methods=["GET"])
 # @user_is("admin")
 def get_dashboard():
 	return "returns the dashboard"
 
-@main.route("/inspection-json", methods=["GET"])
+@main.route("/inspection-json/<id>", methods=["GET"])
 def get_inspection():
-	return jsonify(
-		[	
-			{ "name": "general", "values": [{ "name": "pickerly", "type": "picker", "options": ["derp", "wow", "fancy"], "selected": "derp" }] },
-			{ "name": "inverter", "values": [{ "name": "texty", "type": "textInput", "placeholder": "enter some text" }] }			
-		]
-	)
+	return jsonify(inspections[id])
+
+@main.route("/inspections-list", methods=["GET"])
+def get_inspections():
+	return jsonify(inspections.keys())
 
 @main.route("/form", methods=["POST"])
 def new_form():
