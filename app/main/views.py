@@ -23,7 +23,7 @@ def get_dashboard():
 	return "returns the dashboard"
 
 @main.route("/inspection-json/<id>", methods=["GET"])
-def get_inspection():
+def get_inspection(id):
 	return jsonify(inspections[id])
 
 @main.route("/inspections-list", methods=["GET"])
