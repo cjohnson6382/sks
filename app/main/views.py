@@ -28,7 +28,7 @@ def get_inspection():
 
 @main.route("/inspections-list", methods=["GET"])
 def get_inspections():
-	keys = inspections.keys()
+	keys = list(inspections.keys())
 	print(keys)
 	return jsonify(keys)
 
