@@ -28,7 +28,9 @@ def get_inspection():
 
 @main.route("/inspections-list", methods=["GET"])
 def get_inspections():
-	return jsonify(inspections.keys())
+	keys = inspections.keys()
+	print(keys)
+	return jsonify(keys)
 
 @main.route("/form", methods=["POST"])
 def new_form():
