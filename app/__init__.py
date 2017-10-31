@@ -1,8 +1,6 @@
 from flask import Flask, request, current_app
 from flask_sqlalchemy import SQLAlchemy
 
-# from flask_permissions import Permissions
-
 
 from sqlalchemy import event
 import os
@@ -27,13 +25,10 @@ def create_app(config_name):
 
 		db.init_app(app)
 
-		# I have no idea what this does right now...
-		# perms = Permissions(app, db, current_user)
-
 		from .main import main as main_blueprint
 		app.register_blueprint(main_blueprint)
 
-		# from .api_1_0 import api_bp as api_1_0_blueprint
-		# app.register_blueprint(api_1_0_blueprint, url_prefix='/api/v1.0')
+		from .dashboard import dashboard as dashboard_blueprint
+		app.register_blueprint(dashboard_blueprint)
 
 		return app

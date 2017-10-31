@@ -11,9 +11,9 @@ class Config:
 
     # SERVER_PREFIX = os.environ.get('SERVER_PREFIX')
     #   all of the auth routes use id/secret to get an access_token from auth0
-    # AUTH0_CLIENT_ID = os.environ.get('AUTH0_CLIENT_ID')
-    # AUTH0_CLIENT_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
-    # AUTH0_URL = os.environ.get('AUTH0_URL')
+    AUTH0_CLIENT_ID = os.environ.get('AUTH0_CLIENT_ID')
+    AUTH0_CLIENT_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
+    AUTH0_URL = os.environ.get('AUTH0_URL')
     # SERVER = os.environ.get('SERVER')
 
     SUNKAIZEN_SLOW_DB_QUERY_TIME=0.5
