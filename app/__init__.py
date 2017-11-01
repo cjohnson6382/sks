@@ -29,6 +29,6 @@ def create_app(config_name):
 		app.register_blueprint(main_blueprint)
 
 		from .dashboard import dashboard as dashboard_blueprint
-		app.register_blueprint(dashboard_blueprint)
+		app.register_blueprint(dashboard_blueprint, url_prefix='/dashboard')
 
 		return app

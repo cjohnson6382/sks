@@ -1,6 +1,6 @@
 from app import db
 
-class Contractor():
+class Contractor(db.Model):
 	__tablename__ = "contractors"
 
 	id = db.Column(db.Integer, primary_key=True)

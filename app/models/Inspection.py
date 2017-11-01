@@ -1,22 +1,14 @@
 from app import db
-from sqlalchemy import Column, String, ForeignKey
-import uuid
-import json
 
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.orm import relationship, backref
-
-class Inspection():
+class Inspection(db.Model):
 	__tablename__ = "inspections"
 
-	id = db.Column(db.String(64), ForeignKey('roleholders.id'), primary_key=True)
-	org_id = db.Column(db.String(64), ForeignKey('organizations.id'))
+	id = db.Column(db.Integer, primary_key=True)
+	org_id = db.Column(db.String(64), db.ForeignKey('organizations.id'))
 	description = db.Column(db.Text())
-	item = db.Column(JSONB)
+	item = db.Column(db.TEXT)
 
 	def __init__(self, initial_data):
-		# super().__init__()
-		self.id = uuid.uuid1().hex
 		for k, v in initial_data.items():
 			setattr(self, k, v)
 

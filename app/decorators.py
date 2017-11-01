@@ -71,7 +71,6 @@ def prepare_event(f):
 def requires_auth(f):
 	@wraps(f)
 	def decorated(*args, **kwargs):
-
 		#	the auth0_url gets the public key for our auth0 domain
 		#		https://cjohnson6382.auth0.com/.well-known/jwks.json
 		resp = urllib.request.urlopen(auth0_url)
@@ -139,7 +138,6 @@ def requires_auth(f):
 				}, 400)
 
 		user = json.loads(payload.decode())
-
 
 		################################################################################
 		#	this is for development; it creates a user in the database 

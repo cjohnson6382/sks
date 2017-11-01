@@ -1,13 +1,11 @@
 from app import db
 
-from sqlalchemy.dialects.postgresql import JSONB
-
-class Learning():
+class Learning(db.Model):
 	__tablename__ = "learning"
 
-	id = db.Column(db.String(64), primary_key=True)
+	id = db.Column(db.Integer, primary_key=True)
 	org_id = db.Column(db.String(64), db.ForeignKey('organizations.id'))
-	data = db.Column(JSONB)
+	data = db.Column(db.TEXT)
 
 	def __init__(self, initial_data):
 		for k, v in initial_data.items():

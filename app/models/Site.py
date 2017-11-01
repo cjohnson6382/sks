@@ -1,6 +1,6 @@
 from app import db
 
-class Site():
+class Site(db.Model):
 	__tablename__ = "sites"
 
 	id = db.Column(db.Integer, primary_key=True)

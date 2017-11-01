@@ -1,15 +1,13 @@
 from app import db
 
-from sqlalchemy.dialects.postgresql import JSONB
-
-class Completed():
+class Completed(db.Model):
 	__tablename__ = "completed"
 
 	id = db.Column(db.Integer, primary_key=True)
 	org_id = db.Column(db.String(64), db.ForeignKey('organizations.id'))
 	contractor = db.Column(db.String(64), db.ForeignKey("contractors.id"))
 	inspection = db.Column(db.String(64), db.ForeignKey("inspections.id"))
-	data = db.Column(JSONB)
+	data = db.Column(db.TEXT)
 
 
 	def __init__(self, initial_data):

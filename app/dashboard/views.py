@@ -1,4 +1,4 @@
-from flask import request, current_app, jsonify
+from flask import request, jsonify, _app_ctx_stack, current_app
 
 # from flask_permissions import user_is
 from functools import wraps
@@ -40,18 +40,18 @@ def create_assignment (assignment):
 
 @dashboard.route('/', defaults={"route": ""})
 @dashboard.route('/<string:route>', methods=["GET", "POST"])
+@cross_origin()
 @requires_auth
 @prepare_event
-@cross_origin()
 def r (route):
-	u = User.query.filter(User.sub == _app_ctx_stack.top.current_user.get("sub")).first()
+	u = User.query.filter(User.sub_id == _app_ctx_stack.top.current_user.get("sub")).first()
 	if route in function_dict: 
 		a = { **_app_ctx_stack.top.event, "org_id": u.org_id }
 		result = function_dict[route](a)
 		return jsonify(result)
 	else: 
 		M = models_dict[route]
-		result = M.query.filter(M.org_id == u.org_id)
+		result = M.query.filter(M.org_id == u.org_id).all()
 		return jsonify([r.as_dict() for r in result])
 
 

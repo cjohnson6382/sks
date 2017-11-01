@@ -1,6 +1,6 @@
 from app import db
 
-class Assigned():
+class Assigned(db.Model):
 	__tablename__ = "assigned"
 
 	id = db.Column(db.Integer, primary_key=True)
