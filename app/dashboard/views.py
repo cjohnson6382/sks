@@ -27,6 +27,7 @@ function_dict = {
 }
 
 def create_inspection (inspection):
+	inspection["inspection"] = json.dumps(inspection["inspection"])
 	i = Inspection(inspection)
 	db.session.add(i)
 	db.session.commit()
