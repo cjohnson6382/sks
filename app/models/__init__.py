@@ -6,3 +6,5 @@ from .Learning import Learning
 from .Contractor import Contractor
 from .Assigned import Assigned
 from .Site import Site
+
+from .AssociationTables import *

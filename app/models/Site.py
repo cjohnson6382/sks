@@ -10,6 +10,7 @@ class Site(db.Model):
 	street_name= db.Column(db.String(64))
 	city = db.Column(db.String(64))
 	state = db.Column(db.String(64))
+	zipcode = db.Column(db.Integer)
 	country = db.Column(db.String(64))
 	phone = db.Column(db.String(64))
 	email = db.Column(db.String(64))
@@ -27,6 +28,7 @@ class Site(db.Model):
 			"street_name": self.street_name,
 			"city": self.city,
 			"state": self.state,
+			"zipcode": self.zipcode,
 			"country": self.country,
 			"phone": self.phone,
 			"email": self.email
